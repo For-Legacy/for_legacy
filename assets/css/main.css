@@ -1384,6 +1384,40 @@ section,
   overflow: hidden;
 }
 
+.team .team-member .member-img img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 600px; /* Adjust the height as per your design */
+}
+
+@media (max-width: 1400px) {
+  .team .team-member .member-img img {
+    max-height:500px; /* Reduce height for smaller screens */
+  }
+}
+
+@media (max-width: 1200px) {
+  .team .team-member .member-img img {
+    max-height:400px; /* Reduce height for smaller screens */
+  }
+}
+
+@media (max-width: 1024px) {
+  .team .team-member .member-img img {
+    max-height:350px; /* Reduce height for smaller screens */
+  }
+}
+
+
+@media (max-width: 768px) {
+  .team .team-member .member-img img {
+    max-height: 300px; /* Reduce height for smaller screens */
+  }
+}
+
+
+
 .team .team-member .social {
   position: absolute;
   left: 0;
