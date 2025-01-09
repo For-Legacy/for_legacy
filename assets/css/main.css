@@ -1775,11 +1775,12 @@ section,
 --------------------------------------------------------------*/
 .comparison-card {
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  padding: 30px;
   height: 100%;
   transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
 
 .comparison-card:hover {
@@ -1814,10 +1815,29 @@ section,
 }
 
 .comparison-card .feature-item {
-  padding: 12px 15px;
-  margin-bottom: 8px;
-  border-radius: 8px;
-  font-weight: 500;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.comparison-card .feature-item:before {
+  font-family: "bootstrap-icons";
+  font-size: 18px;
+}
+
+.feature-item.positive:before {
+  content: "\F26B";
+  color: #34C759;
+}
+
+.feature-item.negative:before {
+  content: "\F623";
+  color: #FF3B30;
 }
 
 /* Negative Card Styling */

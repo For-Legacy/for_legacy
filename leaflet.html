@@ -131,7 +131,7 @@
           <h2>For Founders</h2>
           <p>What We Offer</p>
         </div>
-  
+
         <div class="row gy-4">
           <div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100"><img src="assets/img/features-bg.jpg" alt=""></div>
           <div class="col-lg-6">
@@ -241,12 +241,12 @@
                 <h3>ForLegacy</h3>
               </div>
               <div class="card-body">
-                <div class="feature-item positive">✔ Retirement</div>
-                <div class="feature-item positive">✔ Cash Payout</div>
-                <div class="feature-item positive">✔ Flexible 30-day process</div>
-                <div class="feature-item positive">✔ Operate as-is with no culture change</div>
-                <div class="feature-item positive">✔ Legacy protected</div>
-                <div class="feature-item positive">✔ Holds companies for the long term</div>
+                <div class="feature-item positive">Retirement</div>
+                <div class="feature-item positive">Cash Payout</div>
+                <div class="feature-item positive">Flexible 30-day process</div>
+                <div class="feature-item positive">Operate as-is with no culture change</div>
+                <div class="feature-item positive">Legacy protected</div>
+                <div class="feature-item positive">Holds companies for the long term</div>
               </div>
             </div>
           </div>
@@ -590,7 +590,7 @@
               <p><strong>Email:</strong> <span>info@forlegacy.co.uk</span></p>
             </div>
             <div class="social-links d-flex mt-4">
-              <a href="#"><i class="bi bi-twitter"></i></a>
+              <a href="#"><i classbi bi-twitter"></i></a>
               <a href="#"><i class="bi bi-facebook"></i></a>
               <a href="#"><i class="bi bi-instagram"></i></a>
               <a href="#"><i class="bi bi-linkedin"></i></a>
@@ -604,9 +604,9 @@
               <li><i class="bi bi-chevron-right"></i> <a href="#services">Principles</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="https://blog.forlegacy.co.uk" target="_blank" rel="noopener noreferrer">Blog</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
-              
-              
-              
+
+
+
 
             </ul>
           </div>
@@ -666,18 +666,18 @@
       var form = document.getElementById('contact-form');
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-    
+
         document.querySelector('.sent-message').style.display = 'none';
         document.querySelector('.error-message').style.display = 'none';
         document.querySelector('.loading').style.display = 'block';
-    
+
         var formData = new FormData(form);
         var object = {};
         formData.forEach(function (value, key) {
           object[key] = value;
         });
         var json = JSON.stringify(object);
-    
+
         fetch(form.action, {
           method: 'POST',
           headers: {
