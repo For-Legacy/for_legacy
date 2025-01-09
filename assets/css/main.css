@@ -19,19 +19,19 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #F8F9FA; /* Light background */
-  --default-color: #2A6F7C; /* Teal for better readability */
-  --heading-color: #1D4E59; /* Darker teal for headings */
-  --accent-color: #38A1B3; /* Vibrant teal for accents */
+  --background-color: #F8F9FA; /* Warmer light background */
+  --default-color: #516B7A; /* Warmer blue-grey for better readability */
+  --heading-color: #345664; /* Softer navy for more approachability */
+  --accent-color: #C4A68A; /* Warmer golden-taupe for trust */
   --surface-color: #FFFFFF; /* Clean white for clarity */
-  --contrast-color: #1D4E59; /* Deep teal for contrast */
+  --contrast-color: #345664; /* Matching heading color for consistency */
 }
 
 .dark-background {
-  --background-color: #1D4E59;
+  --background-color: #2B4D5C;
   --default-color: #ffffff;
   --heading-color: #ffffff;
-  --surface-color: #2A6F7C;
+  --surface-color: #4A6C80;
   --contrast-color: #ffffff;
 }
 
