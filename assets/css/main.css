@@ -1480,13 +1480,13 @@ section,
 .team .team-member .member-info h4 {
   font-weight: 700;
   margin-bottom: 5px;
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .team .team-member .member-info span {
   display: block;
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 500;
   color: color-mix(in srgb, var(--default-color), transparent 40%);
 }
 
