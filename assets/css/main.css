@@ -12,19 +12,19 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "DM Sans", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  --heading-font: "Crimson Text", Georgia, serif;
-  --nav-font: "DM Sans", sans-serif;
+  --default-font: "Brandon Grotesque", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --heading-font: "Minion Pro", Georgia, serif;
+  --nav-font: "Brandon Grotesque", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #151515; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #ffc451; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #312f2f; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --background-color: #FAFAFA; /* Light background color for the entire website */
+  --default-color: #4A6C80; /* Softer blue-grey for body text */
+  --heading-color: #2B4D5C; /* Deep navy-teal for headings */
+  --accent-color: #BC9A7D; /* Warm taupe for CTAs and highlights */
+  --surface-color: #FFFFFF; /* White for cards and boxed elements */
+  --contrast-color: #2B4D5C; /* Navy-teal for contrast against accent backgrounds */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -176,19 +176,24 @@ h6 {
 
 .header .btn-getstarted,
 .header .btn-getstarted:focus {
-  color: var(--contrast-color);
+  color: #FFFFFF;
   font-size: 14px;
-  padding: 8px 30px;
+  font-weight: 500;
+  padding: 12px 28px;
   margin: 0 0 0 30px;
   border-radius: 4px;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  background: var(--accent-color);
   border: 2px solid var(--accent-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .header .btn-getstarted:hover,
 .header .btn-getstarted:focus:hover {
-  color: var(--default-color);
-  background: var(--accent-color);
+  color: var(--accent-color);
+  background: transparent;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 @media (max-width: 1200px) {
