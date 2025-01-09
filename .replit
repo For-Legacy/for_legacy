@@ -2,3 +2,7 @@ modules = ["nodejs-20", "php-8.2", "python-3.11", "web"]
 
 [nix]
 channel = "stable-24_05"
+
+[[ports]]
+localPort = 8080
+externalPort = 80
