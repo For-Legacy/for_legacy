@@ -784,19 +784,23 @@ section,
   
   .section-title h2 {
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     text-align: center;
+    font-size: 14px;
   }
   
   .section-title h2::after {
-    margin: 15px auto 0;
-    display: block;
+    content: "";
     width: 120px;
+    height: 1px;
+    display: block;
+    background: var(--accent-color);
+    margin: 10px auto;
   }
   
   .section-title p {
     font-size: 28px;
-    margin-top: 15px;
+    margin-top: 10px;
     display: block;
     text-align: center;
   }
