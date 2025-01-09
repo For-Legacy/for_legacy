@@ -29,7 +29,7 @@
 
   <!-- Osano Consent Management -->
   <script src="https://cmp.osano.com/AzZuJ4UPSvr0H105i/aa19e24b-f765-45fc-b10d-b5ce7d015890/osano.js"></script>
-  
+
   <!-- Google Consent Mode -->
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -155,7 +155,7 @@
           <h2>For Founders</h2>
           <p>What we Offer</p>
         </div>
-  
+
         <div class="row gy-4">
           <div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100"><img src="assets/img/features-bg.jpg" alt=""></div>
           <div class="col-lg-6">
@@ -257,10 +257,7 @@
               <div class="member-img">
                 <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+                  <a href="https://www.linkedin.com/in/ashtonpaul26/" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
                 <div class="member-info">
@@ -449,7 +446,7 @@
       </div>
     </section><!-- /Stats Section -->
 
-   
+
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
@@ -550,8 +547,8 @@
               <li><i class="bi bi-chevron-right"></i> <a href="#services">Principles</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="https://blog.forlegacy.co.uk" target="_blank" rel="noopener noreferrer">Blog</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
-              
-              
+
+
 
             </ul>
           </div>
@@ -581,8 +578,7 @@
         <p>© <span>Copyright</span> <strong class="px-1 sitename">For Legacy</strong> <span>All Rights Reserved</span></p>
         <div class="credits">
           Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
-      </div>
+        </div      </div>
     </div>
   </footer>
 
@@ -611,18 +607,18 @@
       var form = document.getElementById('contact-form');
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-    
+
         document.querySelector('.sent-message').style.display = 'none';
         document.querySelector('.error-message').style.display = 'none';
         document.querySelector('.loading').style.display = 'block';
-    
+
         var formData = new FormData(form);
         var object = {};
         formData.forEach(function (value, key) {
           object[key] = value;
         });
         var json = JSON.stringify(object);
-    
+
         fetch(form.action, {
           method: 'POST',
           headers: {
