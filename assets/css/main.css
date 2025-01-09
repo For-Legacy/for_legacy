@@ -12,9 +12,9 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Source Sans Pro", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  --heading-font: "Crimson Pro", Georgia, serif;
-  --nav-font: "Source Sans Pro", sans-serif;
+  --default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --heading-font: "Montserrat", system-ui, -apple-system, Arial, sans-serif;
+  --nav-font: "Montserrat", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
