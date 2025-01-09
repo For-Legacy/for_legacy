@@ -678,8 +678,10 @@
           })
           .catch(error => {
             document.querySelector('.loading').style.display = 'none';
-            document.querySelector('.error-message').textContent = error.message || 'Could not send email. Please try again later.';
+            const errorMessage = error.response?.data?.message || error.message || 'Could not send email. Please try again later.';
+            document.querySelector('.error-message').textContent = errorMessage;
             document.querySelector('.error-message').style.display = 'block';
+            console.error('Form submission error:', error);
           });
       });
     });
