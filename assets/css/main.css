@@ -789,8 +789,9 @@ section,
   }
   
   .section-title h2::after {
-    margin: 4px auto;
+    margin: 15px auto 0;
     display: block;
+    width: 120px;
   }
   
   .section-title p {
