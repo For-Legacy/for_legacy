@@ -166,7 +166,17 @@
   /**
    * Initiate Pure Counter
    */
-  new PureCounter();
+  new PureCounter({
+    selector: '.purecounter',
+    start: 0,
+    end: 0,
+    duration: 1,
+    delay: 10,
+    once: true,
+    repeat: false,
+    decimals: 0,
+    legacy: true,
+  });
 
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
