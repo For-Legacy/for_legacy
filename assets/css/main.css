@@ -772,8 +772,25 @@ section,
 # Global Section Titles
 --------------------------------------------------------------*/
 .section-title {
-  padding-bottom: 60px;
+  padding-bottom: 40px;
   position: relative;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    padding-bottom: 30px;
+  }
+  
+  .section-title h2 {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  
+  .section-title p {
+    font-size: 28px;
+    margin-top: 10px;
+  }
 }
 
 .section-title h2 {
