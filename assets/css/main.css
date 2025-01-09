@@ -1773,6 +1773,10 @@ section,
 /*--------------------------------------------------------------
 # Why Sell Section Styles
 --------------------------------------------------------------*/
+#why-sell {
+  background-color: #D9EDF0;
+}
+
 .comparison-card {
   background: #fff;
   border-radius: 16px;
