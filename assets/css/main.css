@@ -12,9 +12,9 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Brandon Grotesque", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  --heading-font: "Minion Pro", Georgia, serif;
-  --nav-font: "Brandon Grotesque", sans-serif;
+  --default-font: "Source Sans Pro", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --heading-font: "Crimson Pro", Georgia, serif;
+  --nav-font: "Source Sans Pro", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -25,6 +25,14 @@
   --accent-color: #BC9A7D; /* Warm taupe for CTAs and highlights */
   --surface-color: #FFFFFF; /* White for cards and boxed elements */
   --contrast-color: #2B4D5C; /* Navy-teal for contrast against accent backgrounds */
+}
+
+.dark-background {
+  --background-color: #2B4D5C;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #3a5d6d;
+  --contrast-color: #2a2727;
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
