@@ -1842,8 +1842,8 @@ section,
 
 /* Negative Card Styling */
 .comparison-card.negative {
-  background: #2B2B2B;
-  color: #fff;
+  background: #f8f9fa;
+  color: #2B2B2B;
 }
 
 .comparison-card.negative .card-header .icon {
@@ -1852,13 +1852,13 @@ section,
 }
 
 .comparison-card.negative h3 {
-  color: #fff;
+  color: #2B2B2B;
 }
 
 /* Neutral Card Styling */
 .comparison-card.neutral {
-  background: #2B2B2B;
-  color: #fff;
+  background: #f8f9fa;
+  color: #2B2B2B;
 }
 
 .comparison-card.neutral .card-header .icon {
@@ -1867,7 +1867,7 @@ section,
 }
 
 .comparison-card.neutral h3 {
-  color: #fff;
+  color: #2B2B2B;
 }
 
 /* Positive Card Styling */
