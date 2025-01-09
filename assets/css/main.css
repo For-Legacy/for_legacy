@@ -1776,3 +1776,75 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+.floating-contact {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 99;
+}
+
+.floating-btn {
+  display: flex;
+  align-items: center;
+  background: var(--accent-color);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.floating-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  color: #fff;
+}
+
+.floating-btn i {
+  margin-right: 8px;
+  font-size: 20px;
+}
+.team .team-member:hover .member-img img {
+  transform: scale(1.03);
+  transition: transform 0.5s ease;
+}
+
+.team .team-member .member-img img {
+  transition: transform 0.5s ease;
+}
+
+.team .team-member:hover .member-info {
+  background: linear-gradient(180deg, rgba(var(--accent-color-rgb), 0.03) 0%, rgba(var(--accent-color-rgb), 0.06) 100%);
+}
+.success-timeline {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0;
+  position: relative;
+}
+
+.success-timeline::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent-color);
+  transform: translateY(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  z-index: 1;
+}
+
+.timeline-item .year {
+  font-weight: bold;
+  color: var(--accent-color);
+  font-size: 1.2em;
+}
