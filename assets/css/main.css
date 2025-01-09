@@ -911,6 +911,10 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
+.about {
+  background-color: #F5F7FA;
+}
+
 .about .content h3 {
   font-size: 1.75rem;
   font-weight: 700;
