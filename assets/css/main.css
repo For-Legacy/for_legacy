@@ -1771,6 +1771,128 @@ section,
 }
 
 /*--------------------------------------------------------------
+# Why Sell Section Styles
+--------------------------------------------------------------*/
+.comparison-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+  padding: 25px;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.comparison-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.comparison-card .card-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.comparison-card .card-header .icon {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 28px;
+}
+
+.comparison-card .card-header h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.comparison-card .card-body {
+  padding: 0;
+}
+
+.comparison-card .feature-item {
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* Negative Card Styling */
+.comparison-card.negative {
+  background: #2B2B2B;
+  color: #fff;
+}
+
+.comparison-card.negative .card-header .icon {
+  background: rgba(255, 59, 48, 0.2);
+  color: #FF3B30;
+}
+
+.comparison-card.negative h3 {
+  color: #fff;
+}
+
+/* Neutral Card Styling */
+.comparison-card.neutral {
+  background: #2B2B2B;
+  color: #fff;
+}
+
+.comparison-card.neutral .card-header .icon {
+  background: rgba(255, 149, 0, 0.2);
+  color: #FF9500;
+}
+
+.comparison-card.neutral h3 {
+  color: #fff;
+}
+
+/* Positive Card Styling */
+.comparison-card.positive {
+  background: #fff;
+  border: 2px solid var(--accent-color);
+}
+
+.comparison-card.positive .card-header .icon {
+  background: rgba(196, 166, 138, 0.2);
+  color: var(--accent-color);
+}
+
+/* Feature Items Styling */
+.feature-item.positive {
+  background: rgba(52, 199, 89, 0.1);
+  color: #34C759;
+}
+
+.feature-item.negative {
+  background: rgba(255, 59, 48, 0.1);
+  color: #FF3B30;
+}
+
+.comparison-card.negative .feature-item.positive {
+  background: rgba(52, 199, 89, 0.2);
+  color: #4CD964;
+}
+
+.comparison-card.negative .feature-item.negative {
+  background: rgba(255, 59, 48, 0.2);
+  color: #FF6B6B;
+}
+
+.comparison-card.neutral .feature-item.positive {
+  background: rgba(52, 199, 89, 0.2);
+  color: #4CD964;
+}
+
+.comparison-card.neutral .feature-item.negative {
+  background: rgba(255, 59, 48, 0.2);
+  color: #FF6B6B;
+}
+
+/*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
 .starter-section {
