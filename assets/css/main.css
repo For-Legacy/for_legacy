@@ -912,7 +912,7 @@ section,
 # About Section
 --------------------------------------------------------------*/
 .about {
-  background-color: #EBF5F7;
+  background-color: #D9EDF0;
 }
 
 .about .content h3 {
@@ -1494,6 +1494,10 @@ section,
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
+.contact {
+  background-color: #D9EDF0;
+}
+
 .contact .info-item+.info-item {
   margin-top: 40px;
 }
