@@ -1888,28 +1888,26 @@ section,
 }
 
 .feature-item.negative {
-  background: rgba(255, 59, 48, 0.1);
+  background: rgba(240, 240, 240, 0.5);
   color: #FF3B30;
 }
 
-.comparison-card.negative .feature-item.positive {
-  background: rgba(52, 199, 89, 0.2);
-  color: #4CD964;
+.feature-item.positive {
+  background: rgba(52, 199, 89, 0.1);
+  color: #34C759;
 }
 
-.comparison-card.negative .feature-item.negative {
-  background: rgba(255, 59, 48, 0.2);
-  color: #FF6B6B;
+.comparison-card.negative .feature-item.positive,
+.comparison-card.neutral .feature-item.positive,
+.comparison-card.positive .feature-item.positive {
+  background: rgba(52, 199, 89, 0.1);
+  color: #34C759;
 }
 
-.comparison-card.neutral .feature-item.positive {
-  background: rgba(52, 199, 89, 0.2);
-  color: #4CD964;
-}
-
+.comparison-card.negative .feature-item.negative,
 .comparison-card.neutral .feature-item.negative {
-  background: rgba(255, 59, 48, 0.2);
-  color: #FF6B6B;
+  background: rgba(240, 240, 240, 0.5);
+  color: #FF3B30;
 }
 
 /*--------------------------------------------------------------
