@@ -31,8 +31,8 @@
   --background-color: #2B4D5C;
   --default-color: #ffffff;
   --heading-color: #ffffff;
-  --surface-color: #3a5d6d;
-  --contrast-color: #2a2727;
+  --surface-color: #4A6C80;
+  --contrast-color: #ffffff;
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -52,13 +52,7 @@
   --surface-color: #ffffff;
 }
 
-.dark-background {
-  --background-color: #060606;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  --surface-color: #252525;
-  --contrast-color: #2a2727;
-}
+
 
 /* Smooth scroll */
 :root {
