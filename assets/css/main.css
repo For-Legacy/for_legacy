@@ -912,7 +912,7 @@ section,
 # About Section
 --------------------------------------------------------------*/
 .about {
-  background-color: #D9EDF0;
+  background-color: #E5F2F4;
 }
 
 .about .content h3 {
@@ -1232,6 +1232,10 @@ section,
 /*--------------------------------------------------------------
 # Stats Section
 --------------------------------------------------------------*/
+.stats {
+  background-color: #D9EDF0;
+}
+
 .stats .stats-item {
   padding: 10px;
 }
@@ -1495,7 +1499,7 @@ section,
 # Contact Section
 --------------------------------------------------------------*/
 .contact {
-  background-color: #D9EDF0;
+  background-color: var(--background-color);
 }
 
 .contact .info-item+.info-item {
