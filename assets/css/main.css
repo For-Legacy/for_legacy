@@ -17,24 +17,22 @@
   --nav-font: "Montserrat", sans-serif;
 }
 
-/* Global Colors - ForLegacy Color System */
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #F3F3F4; /* FL white - Primary background */
-  --default-color: #25262D; /* FL charcoal - Text */
-  --heading-color: #537459; /* FL forest - Primary brand */
-  --accent-color: #537459; /* FL forest - Primary brand */
-  --surface-color: #F3F3F4; /* FL white - Clean background */
-  --contrast-color: #F3F3F4; /* FL white - For contrast */
-  --secondary-color: #8A9A98; /* FL sage - Secondary elements */
-  --supporting-color: #748081; /* FL steel - Supporting */
+  --background-color: #F8F9FA; /* Warmer light background */
+  --default-color: #516B7A; /* Warmer blue-grey for better readability */
+  --heading-color: #345664; /* Softer navy for more approachability */
+  --accent-color: #C4A68A; /* Warmer golden-taupe for trust */
+  --surface-color: #FFFFFF; /* Clean white for clarity */
+  --contrast-color: #345664; /* Matching heading color for consistency */
 }
 
 .dark-background {
-  --background-color: #25262D;
-  --default-color: #F3F3F4;
-  --heading-color: #F3F3F4;
-  --surface-color: #537459;
-  --contrast-color: #F3F3F4;
+  --background-color: #2B4D5C;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #4A6C80;
+  --contrast-color: #ffffff;
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
