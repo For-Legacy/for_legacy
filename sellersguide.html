@@ -204,19 +204,22 @@
                 </div>
 
 
-                <button id="showMoreButton">Carry On Reading</button>
+                <button id="showMoreButton" class="btn btn-primary">Read More</button>
 
                 <form id="contactForm" style="display:none;">
-                  <h2>Contact Information</h2>
-                  <label for="email">Email:</label><br>
-                  <input type="email" id="email" name="email"><br>
-                  <label for="companyName">Company Name:</label><br>
-                  <input type="text" id="companyName" name="companyName"><br>
-                  <label for="name">Your Name:</label><br>
-                  <input type="text" id="name" name="name"><br>
-                  <label for="phone">Phone Number:</label><br>
-                  <input type="tel" id="phone" name="phone"><br><br>
-                  <button type="submit">Submit</button>
+                  <div class="card mt-4 p-4">
+                    <h4>Want to save this guide for later?</h4>
+                    <p>Enter your details to receive a copy of this guide.</p>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" class="form-control mb-2"><br>
+                    <label for="companyName">Company Name:</label><br>
+                    <input type="text" id="companyName" name="companyName" class="form-control mb-2"><br>
+                    <label for="name">Your Name:</label><br>
+                    <input type="text" id="name" name="name" class="form-control mb-2"><br>
+                    <label for="phone">Phone Number:</label><br>
+                    <input type="tel" id="phone" name="phone" class="form-control mb-2"><br>
+                    <button type="submit" class="btn btn-primary">Send me the guide</button>
+                  </div>
                 </form>
 
               </div>
@@ -249,6 +252,7 @@
       document.getElementById('hiddenContent').style.display = 'block';
       document.getElementById('showMoreButton').style.display = 'none';
       document.getElementById('contactForm').style.display = 'block';
+      window.scrollBy(0, 100); // Smooth scroll down a bit
     });
 
     document.getElementById('contactForm').addEventListener('submit', function(event) {
