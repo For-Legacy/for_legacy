@@ -6,3 +6,14 @@ channel = "stable-24_05"
 [[ports]]
 localPort = 8080
 externalPort = 80
+
+[workflows]
+runButton = "Run Server"
+
+[[workflows.workflow]]
+name = "Run Server"
+author = 38048990
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python server.py"
