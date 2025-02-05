@@ -781,14 +781,14 @@ section,
   .section-title {
     padding-bottom: 30px;
   }
-  
+
   .section-title h2 {
     display: block;
     margin-bottom: 5px;
     text-align: center;
     font-size: 14px;
   }
-  
+
   .section-title h2::after {
     content: "";
     width: 120px;
@@ -797,7 +797,7 @@ section,
     background: var(--accent-color);
     margin: 10px auto;
   }
-  
+
   .section-title p {
     font-size: 28px;
     margin-top: 10px;
@@ -1052,7 +1052,7 @@ section,
 .services .service-item {
   background-color: var(--surface-color);
   text-align: center;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border: 1px solid color-mix(insrgb, var(--default-color), transparent 85%);
   padding: 80px 20px;
   height: 100%;
   transition: all ease-in-out 0.3s;
@@ -1822,11 +1822,11 @@ section,
   .comparison-card {
     padding: 15px;
   }
-  
+
   .comparison-card .card-header h3 {
     font-size: 20px;
   }
-  
+
   .comparison-card .feature-item {
     padding: 10px 15px;
     font-size: 14px;
@@ -1837,7 +1837,7 @@ section,
   #why-sell .container .row {
     margin: 0 10px;
   }
-  
+
   .comparison-card {
     margin-bottom: 20px;
   }
@@ -1976,6 +1976,57 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+/* Sellers Guide Page
+--------------------------------------------------------------*/
+.page-article {
+  padding-top: 100px;
+}
+
+.article {
+  margin: 30px 0;
+}
+
+.article h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--heading-color);
+}
+
+.article .introduction {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.article .lead {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--default-color);
+}
+
+.article h2 {
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem;
+  color: var(--heading-color);
+}
+
+.article h3 {
+  font-size: 1.4rem;
+  margin: 1.5rem 0 1rem;
+  color: var(--heading-color);
+}
+
+.article ul {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.article ul li {
+  margin-bottom: 0.5rem;
+}
+
 .floating-contact {
   position: fixed;
   bottom: 80px;
@@ -2046,5 +2097,4 @@ section,
 .timeline-item .year {
   font-weight: bold;
   color: var(--accent-color);
-  font-size: 1.2em;
-}
+  font-size: 1.2em;}
