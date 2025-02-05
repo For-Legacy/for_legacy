@@ -253,38 +253,22 @@
 
     document.getElementById('contactForm').addEventListener('submit', function(event) {
       event.preventDefault();
-      const email = document.getElementById('email').value;
-      const companyName = document.getElementById('companyName').value;
-      const name = document.getElementById('name').value;
-      const phone = document.getElementById('phone').value;
+      const formData = {
+        email: document.getElementById('email').value,
+        companyName: document.getElementById('companyName').value,
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value,
+        timestamp: new Date().toISOString()
+      };
 
-      //Data to be sent as CSV format:
-      const csvData = `Email,Company Name,Name,Phone\n${email},${companyName},${name},${phone}`;
+      // Store in localStorage
+      let submissions = JSON.parse(localStorage.getItem('formSubmissions') || '[]');
+      submissions.push(formData);
+      localStorage.setItem('formSubmissions', JSON.stringify(submissions));
 
-      //Simulate sending data to server for CSV storage.  Replace with actual server-side code.
-      fetch('/submit-contact-form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'text/plain'
-        },
-        body: csvData
-      })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.text();
-      })
-      .then(data => {
-        console.log('Success:', data);
-        //Optional: Show success message to the user.
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        //Optional: Show error message to the user.
-      });
-
-
+      // Hide form and show content
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('hiddenContent').style.display = 'block';
     });
   </script>
 
