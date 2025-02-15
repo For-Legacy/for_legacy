@@ -379,6 +379,107 @@
       </div>
     </section><!-- /Stats Section -->
 
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Testimonials</h2>
+        <p>What Our Clients Say</p>
+      </div>
+
+      <div class="container">
+        <!-- Testimonials slider -->
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+            <!-- Testimonial Item 1 -->
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="profile-wrap d-flex align-items-center mb-3">
+                  <div class="profile-img">
+                    <img src="assets/img/testimonials/testimonials-1.jpg" class="img-fluid rounded-circle" alt="John Smith" onerror="this.src='assets/img/profile-placeholder.jpg'">
+                  </div>
+                  <div class="profile-info ms-3">
+                    <h3 class="mb-1">John Smith</h3>
+                    <h4 class="mb-1">Former Owner, Smith & Sons Removals</h4>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <blockquote class="testimonial-text">
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  For Legacy made the transition seamless. They kept our team intact and maintained the reputation we built over 30 years. I couldn't be happier with my decision to trust them with my company's future.
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </blockquote>
+              </div>
+            </div>
+
+            <!-- Testimonial Item 2 -->
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="profile-wrap d-flex align-items-center mb-3">
+                  <div class="profile-img">
+                    <img src="assets/img/testimonials/testimonials-2.jpg" class="img-fluid rounded-circle" alt="Sarah Johnson">
+                  </div>
+                  <div class="profile-info ms-3">
+                    <h3 class="mb-1">Sarah Johnson</h3>
+                    <h4 class="mb-1">Previous Owner, Johnson Removals Ltd</h4>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <blockquote class="testimonial-text">
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  What impressed me most was their commitment to preserving our company culture. They didn't just buy the business; they embraced our values and continued our legacy.
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </blockquote>
+              </div>
+            </div>
+
+            <!-- Testimonial Item 3 -->
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="profile-wrap d-flex align-items-center mb-3">
+                  <div class="profile-img">
+                    <img src="assets/img/testimonials/testimonials-4.jpg" class="img-fluid rounded-circle" alt="David Wilson">
+                  </div>
+                  <div class="profile-info ms-3">
+                    <h3 class="mb-1">David Wilson</h3>
+                    <h4 class="mb-1">Former Director, Wilson Moving Solutions</h4>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <blockquote class="testimonial-text">
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  The transition was smooth and professional. They kept every promise they made, and my employees are thriving under their leadership. I couldn't have asked for better successors.
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section><!-- End Testimonials Section -->
+
     <!-- Contact Section -->
     <section id="contact" class="contact section">
       <div class="container section-title" data-aos="fade-up">
@@ -514,66 +615,40 @@
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- Script for form-->
+  <!-- Initialize Swiper -->
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var form = document.getElementById('contact-form');
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        document.querySelector('.sent-message').style.display = 'none';
-        document.querySelector('.error-message').style.display = 'none';
-        document.querySelector('.loading').style.display = 'block';
-
-        var formData = new FormData(form);
-        var object = {};
-        formData.forEach(function (value, key) {
-          object[key] = value;
-        });
-        var json = JSON.stringify(object);
-
-        fetch(form.action, {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: json
-        }).then(response => response.json())
-          .then(data => {
-            document.querySelector('.loading').style.display = 'none';
-            if (data.ok) {
-              // Form submitted successfully
-              form.reset();
-              document.querySelector('.sent-message').style.display = 'block';
-              // If you want to redirect, uncomment the next line
-              // window.location.href = data.next;
-            } else {
-              // Handle any errors
-              throw new Error(data.error || 'An error occurred');
-            }
-          })
-          .catch(error => {
-            document.querySelector('.loading').style.display = 'none';
-            const errorMessage = error.response?.data?.message || error.message || 'Could not send email. Please try again later.';
-            document.querySelector('.error-message').textContent = errorMessage;
-            document.querySelector('.error-message').style.display = 'block';
-            console.error('Form submission error:', error);
-          });
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize testimonials slider
+      new Swiper('.testimonials-slider', {
+        speed: 600,
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false
+        },
+        slidesPerView: 1,
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+          clickable: true
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }
       });
     });
-    </script>
+  </script>
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6CV29TN"
