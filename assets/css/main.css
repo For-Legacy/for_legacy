@@ -968,6 +968,24 @@ section,
   }
 }
 
+/* Hide icon boxes on mobile */
+@media (max-width: 767px) {
+  .hero .icon-box {
+    display: none;
+  }
+  
+  .hero .row.justify-content-center.mt-5 {
+    margin-top: 2rem !important;
+  }
+}
+
+/* Show icon boxes on tablet and desktop */
+@media (min-width: 768px) {
+  .hero .icon-box {
+    display: flex;
+  }
+}
+
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
