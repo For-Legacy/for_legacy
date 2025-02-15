@@ -2016,6 +2016,7 @@ section,
 .comparison-card.positive {
   background: #fff;
   border: 2px solid var(--accent-color);
+  position: relative;
 }
 
 .comparison-card.positive .card-header .icon {
@@ -2023,33 +2024,69 @@ section,
   color: var(--accent-color);
 }
 
-/* Feature Items Styling */
-.feature-item.positive {
-  background: rgba(52, 199, 89, 0.1);
-  color: #34C759;
+/* Featured Card Styling */
+.comparison-card.featured-card {
+  transform: scale(1.05);
+  border: 3px solid var(--accent-color);
+  position: relative;
 }
 
-.feature-item.negative {
-  background: rgba(240, 240, 240, 0.5);
-  color: #FF3B30;
+.comparison-card.featured-card:hover {
+  transform: translateY(-5px) scale(1.05);
 }
 
-.feature-item.positive {
-  background: rgba(52, 199, 89, 0.1);
-  color: #34C759;
+.best-choice-banner {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background: var(--accent-color);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(196, 166, 138, 0.3);
+  z-index: 1;
 }
 
-.comparison-card.negative .feature-item.positive,
-.comparison-card.neutral .feature-item.positive,
-.comparison-card.positive .feature-item.positive {
-  background: rgba(52, 199, 89, 0.1);
-  color: #34C759;
+.feature-item.highlight {
+  background: rgba(196, 166, 138, 0.1);
+  color: #2B2B2B;
+  font-weight: 600;
 }
 
-.comparison-card.negative .feature-item.negative,
-.comparison-card.neutral .feature-item.negative {
-  background: rgba(240, 240, 240, 0.5);
-  color: #FF3B30;
+.feature-item.highlight:before {
+  color: var(--accent-color);
+}
+
+.cta-wrapper {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.comparison-card .btn-getstarted {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  background: var(--accent-color);
+  color: #FFFFFF;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid var(--accent-color);
+  box-shadow: 0 4px 12px rgba(196, 166, 138, 0.2);
+}
+
+.comparison-card .btn-getstarted:hover {
+  background: transparent;
+  color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.comparison-card .btn-getstarted i {
+  margin-left: 8px;
+  font-size: 16px;
 }
 
 /*--------------------------------------------------------------
