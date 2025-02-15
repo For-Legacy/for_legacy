@@ -386,8 +386,7 @@
         <p>What Our Clients Say</p>
       </div>
 
-      <div class="container">
-        <!-- Testimonials slider -->
+      <div class="container position-relative">
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
           <div class="swiper-wrapper">
             <!-- Testimonial Item 1 -->
@@ -395,7 +394,7 @@
               <div class="testimonial-item">
                 <div class="profile-wrap d-flex align-items-center mb-3">
                   <div class="profile-img">
-                    <img src="assets/img/testimonials/testimonials-1.jpg" class="img-fluid rounded-circle" alt="John Smith" onerror="this.src='assets/img/profile-placeholder.jpg'">
+                    <img src="assets/img/testimonials/testimonials-1.jpg" class="img-fluid rounded-circle" alt="John Smith">
                   </div>
                   <div class="profile-info ms-3">
                     <h3 class="mb-1">John Smith</h3>
@@ -472,10 +471,11 @@
             </div>
           </div>
 
-          <!-- Navigation -->
+          <div class="swiper-pagination position-relative mt-4"></div>
+          
+          <!-- Navigation buttons -->
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
-          <div class="swiper-pagination"></div>
         </div>
       </div>
     </section><!-- End Testimonials Section -->
@@ -627,9 +627,9 @@
 
   <!-- Initialize Swiper -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    window.addEventListener('load', function() {
       // Initialize testimonials slider
-      new Swiper('.testimonials-slider', {
+      var testimonialSwiper = new Swiper('.testimonials-slider', {
         speed: 600,
         loop: true,
         autoplay: {
@@ -637,6 +637,7 @@
           disableOnInteraction: false
         },
         slidesPerView: 1,
+        spaceBetween: 30,
         pagination: {
           el: '.swiper-pagination',
           type: 'bullets',
