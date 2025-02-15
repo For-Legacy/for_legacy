@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Our Vision and Journey - For Legacy Investment Ltd</title>
+  <meta name="description" content="Discover For Legacy's vision and journey in preserving business legacies and helping removal company owners transition into retirement.">
+  <meta name="keywords" content="Business Vision, Company Journey, Legacy Planning, Business Growth">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .vision-section {
+      padding: 120px 0 60px;
+      background: linear-gradient(rgba(var(--color-secondary-rgb), 0.1), rgba(var(--color-secondary-rgb), 0.0));
+    }
+    
+    .success-timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 40px 0;
+    }
+
+    .success-timeline::before {
+      content: '';
+      position: absolute;
+      width: 3px;
+      background: var(--color-primary);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      width: calc(50% - 40px);
+      margin-bottom: 60px;
+      padding: 30px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .timeline-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .timeline-item:nth-child(odd) {
+      float: left;
+      clear: both;
+    }
+
+    .timeline-item:nth-child(even) {
+      float: right;
+      clear: both;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: var(--color-primary);
+      border-radius: 50%;
+      top: 50%;
+    }
+
+    .timeline-item:nth-child(odd)::before {
+      right: -60px;
+      transform: translateY(-50%);
+    }
+
+    .timeline-item:nth-child(even)::before {
+      left: -60px;
+      transform: translateY(-50%);
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 3px;
+      background: var(--color-primary);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .timeline-item:nth-child(odd)::after {
+      right: -40px;
+    }
+
+    .timeline-item:nth-child(even)::after {
+      left: -40px;
+    }
+
+    .timeline-item .year {
+      font-weight: 700;
+      color: var(--color-primary);
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--color-secondary);
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .vision-intro {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      text-align: center;
+    }
+
+    .vision-intro h2 {
+      color: var(--color-primary);
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .vision-intro p {
+      color: var(--color-secondary);
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      .success-timeline::before {
+        left: 30px;
+      }
+
+      .timeline-item {
+        width: calc(100% - 80px);
+        float: right;
+        clear: both;
+        margin-left: 80px;
+      }
+
+      .timeline-item:nth-child(odd)::before,
+      .timeline-item:nth-child(even)::before {
+        left: -50px;
+        transform: translateY(-50%);
+      }
+
+      .timeline-item:nth-child(odd)::after,
+      .timeline-item:nth-child(even)::after {
+        left: -30px;
+      }
+
+      .vision-intro h2 {
+        font-size: 2rem;
+      }
+    }
+
+    /* Clear fix for the timeline */
+    .success-timeline::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <h1 class="sitename">For Legacy</h1>
+        <span>.</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="https://blog.forlegacy.co.uk" target="_blank" rel="noopener noreferrer">Blog</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Vision Section -->
+    <section class="vision-section">
+      <div class="container">
+        <div class="vision-intro" data-aos="fade-up">
+          <h2>Building a Legacy Together</h2>
+          <p>At For Legacy, we're on a mission to preserve and grow successful removal businesses while honoring their heritage. Our journey is about creating lasting value and ensuring continuity for the businesses we acquire.</p>
+        </div>
+
+        <div class="success-timeline">
+          <div class="timeline-item" data-aos="fade-right">
+            <span class="year">2024</span>
+            <p>Embarking on our journey to preserve and grow removal business legacies across the UK</p>
+          </div>
+          <div class="timeline-item" data-aos="fade-left">
+            <span class="year">2025</span>
+            <p>Milestone achievement with our first successful business acquisition and transition</p>
+          </div>
+          <div class="timeline-item" data-aos="fade-right">
+            <span class="year">2026</span>
+            <p>Growing our family to include five thriving removal businesses under the For Legacy umbrella</p>
+          </div>
+          <div class="timeline-item" data-aos="fade-left">
+            <span class="year">2028 & beyond</span>
+            <p>Achieving £10M+ combined cashflow while maintaining the unique identity of each business</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer dark-background">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">For Legacy</strong> <span>All Rights Reserved</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top Button -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html> 
