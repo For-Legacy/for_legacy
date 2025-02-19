@@ -104,6 +104,24 @@
     });
   </script>
 
+  <!-- Event snippet for Submit lead form conversion -->
+  <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-16883884952/xirfCPPAiKAaEJjH7vI-',
+        'value': 1.0,
+        'currency': 'GBP',
+        'event_callback': callback
+    });
+    return false;
+  }
+  </script>
+
   <!-- Hotjar Tracking Code for Site 5149253 (name missing) -->
   <script>
     (function(h,o,t,j,a,r){
@@ -158,7 +176,7 @@
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-      <a class="btn-getstarted" href="https://business-valuation-calculator-daniel859.replit.app" aria-label="Start your business valuation">Get Started</a>
+      <a class="btn-getstarted" href="https://business-valuation-calculator-daniel859.replit.app" onclick="return gtag_report_conversion('https://business-valuation-calculator-daniel859.replit.app')" aria-label="Start your business valuation">Get Started</a>
 
     </div>
   </header>
@@ -201,7 +219,7 @@
 
         <div class="row justify-content-center mt-5" data-aos="fade-up" data-aos-delay="600">
           <div class="col-auto">
-            <a href="https://calendly.com/forlegacy/synergycall?month=2024-10" class="hero-cta-btn">
+            <a href="https://calendly.com/forlegacy/synergycall?month=2024-10" onclick="return gtag_report_conversion('https://calendly.com/forlegacy/synergycall?month=2024-10')" class="hero-cta-btn">
               <span>Find Out How</span>
               <i class="bi bi-arrow-right"></i>
             </a>
@@ -291,7 +309,7 @@
                 <div class="feature-item positive highlight">Legacy protected</div>
                 <div class="feature-item positive highlight">Holds companies for the long term</div>
                 <div class="cta-wrapper mt-4">
-                  <a href="https://calendly.com/forlegacy/synergycall?month=2024-10" class="btn-getstarted">
+                  <a href="https://calendly.com/forlegacy/synergycall?month=2024-10" onclick="return gtag_report_conversion('https://calendly.com/forlegacy/synergycall?month=2024-10')" class="btn-getstarted">
                     Start Your Journey
                     <i class="bi bi-arrow-right ms-2"></i>
                   </a>
@@ -374,7 +392,7 @@
             <div class="text-center">
               <h3>How Much Is Your Business Worth?</h3>
               <p>Use our free business valuation calculator to get an estimate of your business's value and see how we can help preserve your legacy.</p>
-              <a class="hero-cta-btn" href="valuation.html">
+              <a class="hero-cta-btn" href="valuation.html" onclick="return gtag_report_conversion('valuation.html')">
                 <span>Value Your Business</span>
                 <i class="bi bi-calculator"></i>
               </a>
@@ -579,7 +597,7 @@
           </div>
           <div class="col-lg-8">
                 <!-- Contact Form -->
-                <form id="contact-form" action="https://formspree.io/f/mdoqpjow" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                <form id="contact-form" action="https://formspree.io/f/mdoqpjow" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="200" onsubmit="return gtag_report_conversion()">
               <div class="row gy-4">
                 <div class="col-md-6">
                   <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
@@ -715,12 +733,15 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-</body>
-
-</html><div class="floating-contact">
-  <a href="https://calendly.com/forlegacy/synergycall?month=2024-10" class="floating-btn">
+<!-- Floating contact button -->
+<div class="floating-contact">
+  <a href="https://calendly.com/forlegacy/synergycall?month=2024-10" onclick="return gtag_report_conversion('https://calendly.com/forlegacy/synergycall?month=2024-10')" class="floating-btn">
     <i class="bi bi-chat-dots"></i>
     <span>Let's Talk</span>
   </a>
 </div>
+
+</body>
+
+</html>
 
