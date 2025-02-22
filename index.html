@@ -106,6 +106,9 @@
   </script>
   <!-- End Heap Analytics -->
 
+  <!-- Heap Tracking Setup -->
+  <script src="assets/js/heap-tracking.js" async></script>
+
   <!-- LinkedIn Insight Tag -->
   <script type="text/javascript">
     _linkedin_partner_id = "6868554";
@@ -156,6 +159,187 @@
 
     </div>
   </header>
+
+  <!-- Heap Tracking Setup -->
+  <script>
+    // Generate a unique identifier for the session
+    function generateUserId() {
+      return 'user_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
+    }
+
+    // Get visit history - Optimized with single localStorage read
+    function getVisitHistory() {
+      // Read all data at once to minimize localStorage access
+      const stored = {
+        visitCount: localStorage.getItem('heapVisitCount'),
+        lastVisit: localStorage.getItem('heapLastVisit'),
+        firstVisit: localStorage.getItem('heapFirstVisit')
+      };
+      
+      const now = new Date();
+      const data = {
+        visitCount: (parseInt(stored.visitCount) || 0) + 1,
+        lastVisitDate: stored.lastVisit || null,
+        firstVisitDate: stored.firstVisit || now.toISOString()
+      };
+
+      // Batch localStorage writes
+      const updates = {
+        heapVisitCount: data.visitCount,
+        heapLastVisit: now.toISOString(),
+        heapFirstVisit: data.firstVisitDate
+      };
+      
+      // Use requestIdleCallback for non-critical storage updates
+      if (window.requestIdleCallback) {
+        requestIdleCallback(() => {
+          Object.entries(updates).forEach(([key, value]) => {
+            localStorage.setItem(key, value);
+          });
+        });
+      } else {
+        // Fallback for browsers that don't support requestIdleCallback
+        setTimeout(() => {
+          Object.entries(updates).forEach(([key, value]) => {
+            localStorage.setItem(key, value);
+          });
+        }, 0);
+      }
+
+      return {
+        ...data,
+        daysSinceLastVisit: data.lastVisitDate ? 
+          Math.floor((now - new Date(data.lastVisitDate)) / (1000 * 60 * 60 * 24)) : 0,
+        totalDaysKnown: Math.floor((now - new Date(data.firstVisitDate)) / (1000 * 60 * 60 * 24))
+      };
+    }
+
+    // Initialize user identification - Done early and cached
+    const userId = localStorage.getItem('heapUserId') || generateUserId();
+    if (!localStorage.getItem('heapUserId')) {
+      localStorage.setItem('heapUserId', userId);
+    }
+    
+    // Optimize event handling with a debounced track function
+    function debounce(func, wait) {
+      let timeout;
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
+    }
+
+    // Efficient event tracking
+    const debouncedTrack = debounce((eventName, properties) => {
+      heap.track(eventName, properties);
+    }, 250);
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get visit history - Done once and reused
+      const visitHistory = getVisitHistory();
+      const urlParams = new URLSearchParams(window.location.search);
+      
+      // Identify user immediately with anonymous ID
+      heap.identify(userId);
+      
+      // Batch all initial properties
+      const initialProperties = {
+        'initial_landing_page': window.location.pathname,
+        'referrer': document.referrer,
+        'device_type': window.innerWidth <= 768 ? 'mobile' : window.innerWidth <= 1024 ? 'tablet' : 'desktop',
+        'first_seen_date': visitHistory.firstVisitDate,
+        'last_visit_date': visitHistory.lastVisitDate,
+        'visit_count': visitHistory.visitCount,
+        'days_since_last_visit': visitHistory.daysSinceLastVisit,
+        'total_days_known': visitHistory.totalDaysKnown,
+        'is_returning_visitor': visitHistory.visitCount > 1,
+        'utm_source': urlParams.get('utm_source') || '',
+        'utm_medium': urlParams.get('utm_medium') || '',
+        'utm_campaign': urlParams.get('utm_campaign') || ''
+      };
+
+      // Add all properties in one call
+      heap.addUserProperties(initialProperties);
+
+      // Track session start
+      debouncedTrack('Session Started', {
+        'visit_number': visitHistory.visitCount,
+        'days_since_last_visit': visitHistory.daysSinceLastVisit,
+        'is_returning_visitor': visitHistory.visitCount > 1
+      });
+
+      // Use event delegation for better performance
+      document.body.addEventListener('click', function(e) {
+        // Handle CTA buttons
+        if (e.target.closest('.btn-getstarted, .hero-cta-btn, .cta-btn')) {
+          const button = e.target.closest('.btn-getstarted, .hero-cta-btn, .cta-btn');
+          debouncedTrack('CTA Clicked', {
+            'button_text': button.textContent.trim(),
+            'button_location': button.closest('section')?.id || 'header',
+            'button_href': button.href
+          });
+        }
+        
+        // Handle navigation
+        if (e.target.closest('#navmenu a')) {
+          const link = e.target.closest('#navmenu a');
+          debouncedTrack('Navigation Link Clicked', {
+            'link_text': link.textContent.trim(),
+            'link_href': link.href
+          });
+        }
+
+        // Handle testimonials
+        if (e.target.closest('.testimonial-item')) {
+          const testimonial = e.target.closest('.testimonial-item');
+          debouncedTrack('Testimonial Viewed', {
+            'author_name': testimonial.querySelector('h3').textContent.trim(),
+            'author_company': testimonial.querySelector('h4').textContent.trim()
+          });
+        }
+      });
+
+      // Handle form submission - Keep separate for reliability
+      const contactForm = document.getElementById('contact-form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          const formData = new FormData(contactForm);
+          heap.identify(formData.get('email'));
+          heap.addUserProperties({
+            'name': formData.get('name'),
+            'email': formData.get('email'),
+            'last_contact_subject': formData.get('subject')
+          });
+          heap.track('Contact Form Submitted', {
+            'subject': formData.get('subject')
+          });
+        });
+      }
+
+      // Video tracking with throttling
+      const heroVideo = document.querySelector('.hero-video');
+      if (heroVideo) {
+        let lastVideoEvent = 0;
+        const VIDEO_THROTTLE = 1000; // 1 second minimum between events
+        
+        ['play', 'pause', 'ended'].forEach(event => {
+          heroVideo.addEventListener(event, function() {
+            const now = Date.now();
+            if (now - lastVideoEvent >= VIDEO_THROTTLE) {
+              debouncedTrack('Hero Video ' + event.charAt(0).toUpperCase() + event.slice(1), {
+                'video_source': this.querySelector('source').src
+              });
+              lastVideoEvent = now;
+            }
+          });
+        });
+      }
+    });
+  </script>
 
   <main class="main">
 
@@ -564,7 +748,7 @@
               </div>
             </div><!-- End Info Item -->
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
-              <i class<i class="bi bi-envelope flex-shrink-0"></i>
+              <i<i class="bi bi-envelope flex-shrink-0"></i>
               <div>
                 <h3>Email Us</h3>
                 <p>info@forlegacy.co.uk</p>
