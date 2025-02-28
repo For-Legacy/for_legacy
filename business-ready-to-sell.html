@@ -37,6 +37,47 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-P6CV29TN');</script>
   <!-- End Google Tag Manager -->
+
+  <style>
+    /* Loading spinner styles */
+    .loader-container {
+      min-height: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
+    }
+    
+    .loader {
+      width: 48px;
+      height: 48px;
+      border: 5px solid #FFF;
+      border-bottom-color: #FF3D00;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Hide ScoreApp container until loaded */
+    .scoreapp-container {
+      opacity: 0;
+      transition: opacity 0.3s ease-in;
+    }
+
+    .scoreapp-container.loaded {
+      opacity: 1;
+    }
+  </style>
 </head>
 
 <body>
@@ -71,8 +112,16 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12">
-            <div data-sa-url="https://fdce1fc6-e1d7-4070-8633-de45ba9c1833.scoreapp.com/?sa_target=_top" data-sa-view="full">
-              <script src="https://static.scoreapp.com/js/integration/v1/embedding.js?v=DgJzAz"></script>
+            <!-- Loading spinner -->
+            <div class="loader-container" id="loaderContainer">
+              <span class="loader"></span>
+            </div>
+            
+            <!-- ScoreApp container -->
+            <div class="scoreapp-container" id="scoreappContainer">
+              <div data-sa-url="https://fdce1fc6-e1d7-4070-8633-de45ba9c1833.scoreapp.com/?sa_target=_top" data-sa-view="full">
+                <script src="https://static.scoreapp.com/js/integration/v1/embedding.js?v=DgJzAz"></script>
+              </div>
             </div>
           </div>
         </div>
@@ -100,6 +149,32 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    // Handle ScoreApp loading
+    window.addEventListener('load', function() {
+      const loaderContainer = document.getElementById('loaderContainer');
+      const scoreappContainer = document.getElementById('scoreappContainer');
+      
+      // Function to check if ScoreApp iframe is loaded
+      function checkScoreAppLoaded() {
+        const iframe = document.querySelector('iframe[src*="scoreapp.com"]');
+        if (iframe) {
+          // Hide loader and show ScoreApp
+          setTimeout(() => {
+            loaderContainer.style.display = 'none';
+            scoreappContainer.classList.add('loaded');
+          }, 500); // Small delay to ensure iframe content is rendered
+        } else {
+          // Keep checking until iframe appears
+          setTimeout(checkScoreAppLoaded, 100);
+        }
+      }
+
+      // Start checking for ScoreApp iframe
+      checkScoreAppLoaded();
+    });
+  </script>
 </body>
 
 </html> 
