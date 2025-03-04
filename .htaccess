@@ -1,9 +1,20 @@
-# Remove .html extension
+# Enable rewrite engine
 RewriteEngine On
+
+# Redirect www to non-www and enforce HTTPS
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [OR]
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# Remove .html extension from URLs (redirect explicit .html requests)
+RewriteCond %{REQUEST_URI} ^(.*)\.html$ [NC]
+RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+
+# Internally rewrite requests to .html files
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)$ $1.html [NC,L]
 
-# Redirect /index to /
-RewriteRule ^index$ / [R=301,L]
-RewriteRule ^index\.html$ / [R=301,L] 
+# Redirect index.html or index to clean URL
+RewriteRule ^(.*/)?index\.html$ /$1 [R=301,L]
+RewriteRule ^(.*/)?index$ /$1 [R=301,L] 
