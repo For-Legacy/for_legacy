@@ -13,8 +13,9 @@
 /* Fonts */
 :root {
   --default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  --heading-font: "Montserrat", system-ui, -apple-system, Arial, sans-serif;
-  --nav-font: "Montserrat", sans-serif;
+  --heading-font: "Satoshi", system-ui, -apple-system, Arial, sans-serif;
+  --nav-font: "Satoshi", sans-serif;
+  --sitename-font: "Satoshi", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -128,7 +129,7 @@ h6 {
   margin: 0 10px -6px 0;
   border: 3px solid var(--accent-color);
   border-top-color: var(--surface-color);
-  animation: php-email-form-loading 1s linear infinite;
+  animation: php-email-form-loading 1.5s linear infinite;
 }
 
 @keyframes php-email-form-loading {
@@ -164,10 +165,11 @@ h6 {
   margin-right: 8px;
 }
 
-.header .logo h1 {
+.header .logo h1.sitename {
+  font-family: var(--sitename-font);
+  font-weight: 700;
   font-size: 32px;
   margin: 0;
-  font-weight: 700;
   color: var(--heading-color);
 }
 
@@ -254,16 +256,16 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--nav-color);
-    padding: 18px 15px;
-    font-size: 16px;
     font-family: var(--nav-font);
-    font-weight: 400;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    font-weight: 500;
+    color: var(--nav-color);
     white-space: nowrap;
     transition: 0.3s;
+    position: relative;
+    padding: 5px 2px;
+    font-size: 16px;
+    text-transform: capitalize;
+    margin: 0 15px;
   }
 
   .navmenu a i,
@@ -490,12 +492,11 @@ h6 {
   margin-right: 6px;
 }
 
-.footer .footer-about .logo span {
-  font-size: 26px;
+.footer .footer-about .logo span.sitename {
+  font-family: var(--sitename-font);
   font-weight: 700;
-  letter-spacing: 1px;
-  font-family: var(--heading-font);
   color: var(--heading-color);
+  font-size: 28px;
 }
 
 .footer .footer-about p {
@@ -619,6 +620,11 @@ h6 {
 
 .footer .copyright p {
   margin-bottom: 0;
+}
+
+.footer .copyright p .sitename {
+  font-family: var(--sitename-font);
+  font-weight: 700;
 }
 
 .footer .credits {
@@ -787,15 +793,16 @@ section,
     margin-bottom: 5px;
     text-align: center;
     font-size: 14px;
+    text-transform: capitalize;
   }
 
   .section-title h2::after {
     content: "";
-    width: 120px;
-    height: 1px;
-    display: block;
-    background: var(--accent-color);
-    margin: 10px auto;
+    width: 0;
+    height: 0;
+    display: none;
+    background: transparent;
+    margin: 0;
   }
 
   .section-title p {
@@ -807,24 +814,23 @@ section,
 }
 
 .section-title h2 {
-  font-size: 16px;
+  font-size: 32px;
   font-weight: 700;
-  padding: 0;
-  line-height: 1px;
-  margin: 0;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  color: var(--heading-color);
+  font-family: var(--heading-font);
   position: relative;
 }
 
 .section-title h2::after {
   content: "";
-  width: 120px;
-  height: 1px;
-  display: inline-block;
-  background: var(--accent-color);
-  margin: 4px 10px;
+  width: 0;
+  height: 0;
+  display: none;
+  background: transparent;
+  margin: 0;
 }
 
 .section-title p {
@@ -832,7 +838,7 @@ section,
   margin: 0;
   font-size: 36px;
   font-weight: 700;
-  text-transform: capitalize;
+  text-transform: none;
 }
 
 /*--------------------------------------------------------------
@@ -873,9 +879,12 @@ section,
 
 .hero h2 {
   margin: 0;
-  font-size: 56px;
+  font-size: 48px;
   font-weight: 700;
-  font-family: var(--nav-font);
+  line-height: 56px;
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+  text-transform: capitalize;
 }
 
 .hero h2 span {
@@ -913,6 +922,7 @@ section,
   line-height: 1;
   font-size: 20px;
   line-height: 26px;
+  text-transform: capitalize;
 }
 
 .hero .icon-box h3 a {
@@ -941,7 +951,7 @@ section,
   transition: all 0.3s ease;
   box-shadow: 0 6px 20px rgba(196, 166, 138, 0.4);
   border: 3px solid var(--accent-color);
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .hero-cta-btn i {
@@ -1079,6 +1089,7 @@ section,
   font-size: 20px;
   font-weight: 700;
   margin: 0 0 5px 0;
+  text-transform: capitalize;
 }
 
 .features .features-item i {
@@ -1611,7 +1622,7 @@ section,
 # Contact Section
 --------------------------------------------------------------*/
 .contact {
-  background-color: var(--background-color);
+  background-color: #D9EDF0;
 }
 
 .contact .info-item+.info-item {
@@ -1619,274 +1630,7 @@ section,
 }
 
 .contact .info-item i {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  font-size: 20px;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  transition: all 0.3s ease-in-out;
-  margin-right: 15px;
-}
-
-.contact .info-item h3 {
-  padding: 0;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.contact .info-item p {
-  padding: 0;
-  margin-bottom: 0;
-  font-size: 14px;
-}
-
-.contact .php-email-form {
-  height: 100%;
-}
-
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
-.contact .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 0;
-  color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-}
-
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
-.contact .php-email-form textarea:focus {
-  border-color: var(--accent-color);
-}
-
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
-.contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
-
-.contact .php-email-form button[type=submit] {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 4px;
-}
-
-.contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
-
-/*--------------------------------------------------------------
-# Portfolio Details Section
---------------------------------------------------------------*/
-.portfolio-details .portfolio-details-slider img {
-  width: 100%;
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
-  opacity: 1;
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
-}
-
-.portfolio-details .portfolio-info {
-  background-color: var(--surface-color);
-  padding: 30px;
-  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
-}
-
-.portfolio-details .portfolio-info h3 {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
-}
-
-.portfolio-details .portfolio-info ul {
-  list-style: none;
-  padding: 0;
-  font-size: 15px;
-}
-
-.portfolio-details .portfolio-info ul li+li {
-  margin-top: 10px;
-}
-
-.portfolio-details .portfolio-description {
-  padding-top: 30px;
-}
-
-.portfolio-details .portfolio-description h2 {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.portfolio-details .portfolio-description p {
-  padding: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-}
-
-/*--------------------------------------------------------------
-# Service Details Section
---------------------------------------------------------------*/
-.service-details .service-box {
-  background-color: var(--surface-color);
-  padding: 20px;
-  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
-}
-
-.service-details .service-box+.service-box {
-  margin-top: 30px;
-}
-
-.service-details .service-box h4 {
-  font-size: 20px;
-  font-weight: 700;
-  border-bottom: 2px solid color-mix(in srgb, var(--default-color), transparent 92%);
-  padding-bottom: 15px;
-  margin-bottom: 15px;
-}
-
-.service-details .services-list {
-  background-color: var(--surface-color);
-}
-
-.service-details .services-list a {
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  background-color: color-mix(in srgb, var(--default-color), transparent 96%);
-  display: flex;
-  align-items: center;
-  padding: 12px 15px;
-  margin-top: 15px;
-  transition: 0.3s;
-}
-
-.service-details .services-list a:first-child {
-  margin-top: 0;
-}
-
-.service-details .services-list a i {
-  font-size: 16px;
-  margin-right: 8px;
-  color: var(--accent-color);
-}
-
-.service-details .services-list a.active {
-  color: var(--contrast-color);
-  background-color: var(--accent-color);
-}
-
-.service-details .services-list a.active i {
-  color: var(--contrast-color);
-}
-
-.service-details .services-list a:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
-  color: var(--accent-color);
-}
-
-.service-details .download-catalog a {
-  color: var(--default-color);
-  display: flex;
-  align-items: center;
-  padding: 10px 0;
-  transition: 0.3s;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-}
-
-.service-details .download-catalog a:first-child {
-  border-top: 0;
-  padding-top: 0;
-}
-
-.service-details .download-catalog a:last-child {
-  padding-bottom: 0;
-}
-
-.service-details .download-catalog a i {
-  font-size: 24px;
-  margin-right: 8px;
-  color: var(--accent-color);
-}
-
-.service-details .download-catalog a:hover {
-  color: var(--accent-color);
-}
-
-.service-details .help-box {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  margin-top: 30px;
-  padding: 30px 15px;
-}
-
-.service-details .help-box .help-icon {
-  font-size: 48px;
-}
-
-.service-details .help-box h4,
-.service-details .help-box a {
-  color: var(--contrast-color);
-}
-
-.service-details .services-img {
-  margin-bottom: 20px;
-}
-
-.service-details h3 {
-  font-size: 26px;
-  font-weight: 700;
-}
-
-.service-details p {
-  font-size: 15px;
-}
-
-.service-details ul {
-  list-style: none;
-  padding: 0;
-  font-size: 15px;
-}
-
-.service-details ul li {
-  padding: 5px 0;
-  display: flex;
-  align-items: center;
-}
-
-.service-details ul i {
-  font-size: 20px;
-  margin-right: 8px;
-  color: var(--accent-color);
-}
-
-/*--------------------------------------------------------------
-# Why Sell Section Styles
---------------------------------------------------------------*/
-#why-sell {
-  background-color: #D9EDF0;
+  // ... existing code ...
 }
 
 .comparison-card {
