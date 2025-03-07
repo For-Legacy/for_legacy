@@ -32,6 +32,37 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <!-- Custom Styles -->
+  <style>
+    /* Improve contact section spacing */
+    .contact .info-item {
+      align-items: center; /* Vertically center the icon with the text */
+    }
+    
+    .contact .info-item i {
+      margin-right: 25px !important; /* Increase spacing between icon and text */
+      font-size: 24px; /* Make icons slightly larger */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .contact .info-item h3 {
+      margin-bottom: 10px; /* Add space below the heading */
+    }
+
+    /* Keep the Home link white like other nav links */
+    .navmenu .active, 
+    .navmenu .active:focus {
+      color: var(--nav-color) !important; /* Override the gold color with the default nav color */
+    }
+    
+    /* Maintain hover functionality */
+    .navmenu .active:hover {
+      color: var(--nav-hover-color) !important; /* Keep the hover color as gold */
+    }
+  </style>
+
   <!-- Osano Consent Management -->
   <script src="https://cmp.osano.com/AzZuJ4UPSvr0H105i/aa19e24b-f765-45fc-b10d-b5ce7d015890/osano.js"></script>
 
@@ -746,7 +777,7 @@
               </div>
             </div><!-- End Info Item -->
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
-              <i<i class="bi bi-envelope flex-shrink-0"></i>
+              <i class="bi bi-envelope flex-shrink-0"></i>
               <div>
                 <h3>Email us</h3>
                 <p>info@forlegacy.co.uk</p>
