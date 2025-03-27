@@ -17,8 +17,11 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
   
+  <!-- Cabinet Grotesk Font -->
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800&display=swap" rel="stylesheet">
+
   <!-- Satoshi Variable Font -->
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
 
@@ -34,6 +37,11 @@
 
   <!-- Custom Styles -->
   <style>
+    /* Base font settings */
+    body {
+      font-family: 'Satoshi', sans-serif;
+    }
+
     /* Improve contact section spacing */
     .contact .info-item {
       align-items: center; /* Vertically center the icon with the text */
@@ -60,6 +68,42 @@
     /* Maintain hover functionality */
     .navmenu .active:hover {
       color: var(--nav-hover-color) !important; /* Keep the hover color as gold */
+    }
+
+    /* Hero heading font */
+    .hero h2 {
+      font-family: 'Crimson Pro', serif;
+    }
+
+    /* Hero subheading font */
+    .hero p {
+      font-family: 'Satoshi', sans-serif;
+      font-weight: 500;
+    }
+
+    /* Other headings font */
+    .section-title h2,
+    .features-item h4,
+    .stats-item h3,
+    .testimonial-item h3,
+    .contact h2,
+    .footer h4 {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-weight: 800;
+    }
+
+    /* Navigation font */
+    .navmenu {
+      font-family: 'Satoshi', sans-serif;
+      font-weight: 500;
+    }
+
+    /* Button font */
+    .btn-getstarted,
+    .hero-cta-btn,
+    .cta-btn {
+      font-family: 'Satoshi', sans-serif;
+      font-weight: 500;
     }
   </style>
 
@@ -471,6 +515,15 @@
       </div>
 
     </section><!-- /Features Section -->
+
+    <!-- As Seen In Section -->
+    <section class="as-seen-in py-5" style="background-color: #F4EFE7;">
+      <div class="container text-center" data-aos="fade-up">
+        <div class="d-flex justify-content-center align-items-center">
+          <img src="assets/img/thetimes.jpg" alt="As seen in The Times" class="img-fluid" style="max-width: 500px; width: 100%; height: auto; padding: 0 15px;">
+        </div>
+      </div>
+    </section>
 
     <!-- Why Sell to For Legacy Section -->
     <section id="why-sell" class="services section">
